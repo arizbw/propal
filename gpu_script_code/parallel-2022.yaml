@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: user01-paralel2022-pod
+spec:
+  restartPolicy: Never
+  volumes:
+    - name: paralel2022-pv-storage
+      persistentVolumeClaim:
+        claimName: paralel2022-pv-claim
+  containers:
+    - name: paralel2022-container
+      image: "nvcr.io/nvidia/nvhpc:22.3-devel-cuda_multi-ubuntu20.04"  # Change this (Look up at NGC NVIDIA)
+      command: ["/bin/sh"]
+      args: ["-c", "while true; do sleep 10; done"]
+      volumeMounts:
+        - mountPath: "/workspace"
+          name: paralel2022-pv-storage

@@ -1,0 +1,34 @@
+# Create a pod that reads and writes to the
+# NFS server via an NFS volume.
+
+kind: Pod
+apiVersion: v1
+metadata:
+  name: user01-gpu-03-cuda
+spec:
+  # Add the server as an NFS volume for the pod
+  volumes:
+    - name: nfs-volume
+      nfs:
+        # URL for the NFS server
+        server: 152.118.31.24 # Change this!
+        path: /mnt/sharedfolder/<halodigantiyasesuaiuser>
+
+  # In this container, we'll mount the NFS volume
+  # and write the date to a file inside it.
+  containers:
+    - name: app
+      image: nvcr.io/nvidia/nvhpc:21.9-devel-cuda_multi-ubuntu20.04
+
+      # Mount the NFS volume in the container
+      volumeMounts:
+        - name: nfs-volume
+          mountPath: /workspace
+
+      # Write to a file inside our NFS
+      command: ["/bin/sh"]
+      args: ["-c", "while true; do date >> /workspace/date2113.txt; sleep 5; done"]
+  nodeSelector:
+      gputype: gpu-03
+  imagePullSecrets:
+      - name: nvcr.dgxkey
