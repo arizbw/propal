@@ -6,7 +6,7 @@
 ssh user@ipaddress -p port
 ```
 
-2 . Please open e.g [matmul.c](https://gist.github.com/shinde-rahul/0b38d58c3d5d7f7346210cdee90cc3b0 ) and edit your code. You can change your matrix size (N) Save it
+2 . Please open e.g [matmul.c](https://gist.github.com/shinde-rahul/0b38d58c3d5d7f7346210cdee90cc3b0) and edit your code. You can change your matrix size (N) Save it
 
 ```c
 nano matmul.c
@@ -61,7 +61,7 @@ nano run-03.out
 ssh user@ipaddress -p port
 ```
 
-2 . Please open e.g [matmul.c](https://gist.github.com/shinde-rahul/0b38d58c3d5d7f7346210cdee90cc3b0 ) and edit your code. You can change your matrix size (N) Save it
+2 . Please open e.g [matmul.c](https://gist.github.com/shinde-rahul/0b38d58c3d5d7f7346210cdee90cc3b0) and edit your code. You can change your matrix size (N) Save it
 
 ```c
 nano matmul.c
@@ -166,3 +166,8 @@ cd /var/nfs/
 nvcc matrix.cu -o matrix.o
 ./matrix.o
 ```
+
+## References
+
+1.  Matrix Multiplication MPI Version, [https://gist.github.com/shinde-rahul/0b38d58c3d5d7f7346210cdee90cc3b0 ](https://gist.github.com/shinde-rahul/0b38d58c3d5d7f7346210cdee90cc3b0)
+2.  Matrix Multiplication CUDA Version, [https://github.com/lzhengchun/matrix-cuda/matmul.cu](https://github.com/lzhengchun/matrix-cuda)
