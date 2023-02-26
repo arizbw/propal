@@ -6,7 +6,7 @@
 ssh user@ipaddress -p port
 ```
 
-2 . Please open e.g matmul.c and edit your code. You can change your matrix size (N) Save it
+2 . Please open e.g [matmul.c](https://gist.github.com/shinde-rahul/0b38d58c3d5d7f7346210cdee90cc3b0 ) and edit your code. You can change your matrix size (N) Save it
 
 ```c
 nano matmul.c
@@ -20,7 +20,7 @@ nano matmul.c
 mpicc matmul.c -o matmul.o
 ```
 
-4 . Please edit you run-script.sh.
+4 . Please edit you [run-script.sh](cluster_script_code/run-script.sh).
 
 *   Point the script to the matmul.o.
 *   Set the name of your output file run-3.out.
@@ -61,7 +61,7 @@ nano run-03.out
 ssh user@ipaddress -p port
 ```
 
-2 . Please open e.g matmul.c and edit your code. You can change your matrix size (N) Save it
+2 . Please open e.g [matmul.c](https://gist.github.com/shinde-rahul/0b38d58c3d5d7f7346210cdee90cc3b0 ) and edit your code. You can change your matrix size (N) Save it
 
 ```c
 nano matmul.c
@@ -85,10 +85,10 @@ Ctrl + x
 
 ![](img/006.png)
 
-5 . Execute your code. Change the number of process -np between 2-64 and see your result.
+5 . Execute your code. Change the number of processes -np between _2 - 64_ and see your result.
 
 ```c
-mpirun --hostfile hostfile -np 4 //matmul.o 
+mpirun --hostfile hostfile -np 4 matmul.o 
 ```
 
 ---
@@ -101,7 +101,7 @@ mpirun --hostfile hostfile -np 4 //matmul.o
 ssh user@ipaddress -p port
 ```
 
-2 . Please open and edit your yaml file.
+2 . Please open and edit your yaml file e.g [parallel-2022.yaml](gpu_script_code/parallel-2022.yaml) .
 
 ```c
 nano pods.yaml
@@ -110,7 +110,7 @@ Ctrl + X
 
 ![](img/008.png)
 
-3 . Please edit your name with this format {name}-gpuxx-{cudasdk-pods}
+3 . Please edit your name with this format _{name}-gpuxx-{cudasdk-pods}_
 
 1.  Please edit your images : nvhpc21.9-devel-cuda, you can change this image based on requirement
     1.  CUDA : nvcr.io/nvidia/nvhpc:21.9-devel-cuda\_multi-ubuntu20.04
@@ -139,7 +139,7 @@ Kubectl describe pods
 5 . Access your pods
 
 ```c
-kubectl exec -it /bin/bas
+kubectl exec -it /bin/bash
 ```
 
 6 . Delete pods
@@ -152,8 +152,9 @@ Kubectl delete pods
 
 1.  Use winscp and go to , protocol SCP/SFTP
 2.  Enter username & password
-3.  Place your code in your home directory
-4.  \<your home directory in synchronize with /var/nfs folder in the pod
+3.  Place your code in your home directory. 
+4.  Matrix multiplication in CUDA version e.g [matmul.cu](https://github.com/lzhengchun/matrix-cuda)
+5.  \<your home directory in synchronize with /var/nfs folder in the pod
 
 ![](img/012.png)
 
