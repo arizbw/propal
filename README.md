@@ -12,7 +12,9 @@ ssh user@ipaddress -p port
 nano matmul.c
 ```
 
-![](img/001.png)3 . Please compile your code `matmul.o`
+![](img/001.png)
+
+3 . Please compile your code `matmul.o`
 
 ```javascript
 mpicc matmul.c -o matmul.o
@@ -29,7 +31,9 @@ mpicc matmul.c -o matmul.o
 nano run-script.sh
 ```
 
-![](img/002.png)5 . Execute run-script.sh using this command
+![](img/002.png)
+
+5 . Execute run-script.sh using this command
 
 ```c
 sbatch run-script.sh
@@ -64,7 +68,9 @@ nano matmul.c
 Ctrl + X
 ```
 
-![](img/005.png)3 . Please compile your code matmul.o
+![](img/005.png)
+
+3 . Please compile your code matmul.o
 
 ```c
 mpicc matmul.c -o matmul.o
@@ -77,7 +83,9 @@ nano hostfile
 Ctrl + x
 ```
 
-![](img/006.png)5 . Execute your code. Change the number of process -np between 2-64 and see your result.
+![](img/006.png)
+
+5 . Execute your code. Change the number of process -np between 2-64 and see your result.
 
 ```c
 mpirun --hostfile hostfile -np 4 //matmul.o 
@@ -100,7 +108,9 @@ nano pods.yaml
 Ctrl + X
 ```
 
-![](img/008.png)3 . Please edit your name with this format {name}-gpuxx-{cudasdk-pods}
+![](img/008.png)
+
+3 . Please edit your name with this format {name}-gpuxx-{cudasdk-pods}
 
 1.  Please edit your images : nvhpc21.9-devel-cuda, you can change this image based on requirement
     1.  CUDA : nvcr.io/nvidia/nvhpc:21.9-devel-cuda\_multi-ubuntu20.04
@@ -143,7 +153,9 @@ Kubectl delete pods
 1.  Use winscp and go to , protocol SCP/SFTP
 2.  Enter username & password
 3.  Place your code in your home directory
-4.  \<your home directory in synchronize with /var/nfs folder in the pod![](img/012.png)
+4.  \<your home directory in synchronize with /var/nfs folder in the pod
+
+![](img/012.png)
 
 8 . Execute your code
 
