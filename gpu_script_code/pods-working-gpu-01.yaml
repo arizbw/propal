@@ -12,7 +12,7 @@ spec:
       nfs:
         # URL for the NFS server
         server: 152.118.31.24 # Change this!
-        path: /mnt/sharedfolder/<halodigantiyasesuaiuser>
+        path: /mnt/sharedfolder/<user-xx-xx is the user number>
 
   # In this container, we'll mount the NFS volume
   # and write the date to a file inside it.
@@ -24,6 +24,9 @@ spec:
       volumeMounts:
         - name: nfs-volume
           mountPath: /workspace
+
+      # Set the working directory
+      workingDir: /var/nfs
 
       # Write to a file inside our NFS
       command: ["/bin/sh"]
